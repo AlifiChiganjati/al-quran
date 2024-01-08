@@ -1,4 +1,4 @@
-import { Text, Logo } from "./Text.style";
+import { Text, Logo, SurahTitle } from "./Text.style";
 
 export default Text;
-export { Logo };
+export { Logo, SurahTitle };

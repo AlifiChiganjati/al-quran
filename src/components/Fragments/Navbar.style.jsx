@@ -8,6 +8,8 @@ export const Header = styled.header`
   z-index: 10;
   background-color: var(--primary-color);
   color: var(--white-color);
+  position: fixed;
+  width: 100%;
 `;
 
 export const SearchForm = styled.form`
