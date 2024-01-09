@@ -9,9 +9,31 @@ export const Logo = styled(Text)`
   text-shadow: 2px 2px var(--dark-color);
 `;
 
-export const SurahTitle = styled(Text)`
+export const Title = styled(Text)`
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--dark-color);
   text-decoration: underline;
+`;
+
+export const SurahNomor = styled(Text)`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-color);
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  transform: translate(-50%, -50%);
+`;
+
+export const SurahTitle = styled(Text)`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-color);
+`;
+
+export const SurahText = styled(Text)`
+  font-size: 12px;
+  color: var(--dark-color);
+  opacity: 0.8;
 `;
