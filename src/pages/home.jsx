@@ -1,15 +1,16 @@
 import { useState } from "react";
-import Text, { SurahTitle } from "../components/Elements/Text";
+import { SurahTitle } from "../components/Elements/Text";
 import PageAuth from "../components/Layouts/PageAuth";
 import { Section } from "./pages.style";
 import { useEffect } from "react";
-import { getSurahQuran } from "../helper/api";
 import { CardContainer } from "../components/Elements/Card";
 import {
   SurahNomor,
   SurahText,
   Title,
 } from "../components/Elements/Text/Text.style";
+import { useNavigate } from "react-router-dom";
+import { getSurahQuran } from "../services/api";
 
 const HomePage = () => {
   const [quran, setQuran] = useState([]);
@@ -19,12 +20,14 @@ const HomePage = () => {
   useEffect(() => {
     getSurahQuran()
       .then((res) => {
-        setQuran(res.data);
+        setQuran(res);
       })
       .catch((err) => {
         if (err.code !== 200) console.info(err.message);
       });
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <PageAuth>
@@ -41,7 +44,11 @@ const HomePage = () => {
           }}
         >
           {quran.map((surah, i) => (
-            <CardContainer key={i} to={`/al-quran/${surah.nomor}`}>
+            <CardContainer
+              key={i}
+              to={`/al-quran/surah/${surah.nomor}`}
+              onClick={() => navigate(`/al-quran/${surah.nomor}`)}
+            >
               <SurahNomor>{surah.nomor}</SurahNomor>
               <div
                 style={{
