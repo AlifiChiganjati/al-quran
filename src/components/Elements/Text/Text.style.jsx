@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+`;
 
 export const Logo = styled(Text)`
   font-size: 2rem;
@@ -36,4 +40,11 @@ export const SurahText = styled(Text)`
   font-size: 12px;
   color: var(--dark-color);
   opacity: 0.8;
+`;
+
+export const ArabText = styled(Text)`
+  font-size: 24px;
+  font-weight: 600;
+  text-align: right;
+  color: var(--dark-color);
 `;

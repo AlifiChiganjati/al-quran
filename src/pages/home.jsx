@@ -47,7 +47,7 @@ const HomePage = () => {
             <CardContainer
               key={i}
               to={`/al-quran/surah/${surah.nomor}`}
-              onClick={() => navigate(`/al-quran/${surah.nomor}`)}
+              onClick={() => navigate(`/al-quran/surah/${surah.nomor}`)}
             >
               <SurahNomor>{surah.nomor}</SurahNomor>
               <div

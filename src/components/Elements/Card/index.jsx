@@ -1,3 +1,3 @@
-import { CardContainer } from "./Card.style";
+import { CardContainer, AyatCardContainer } from "./Card.style";
 
-export { CardContainer };
+export { CardContainer, AyatCardContainer };

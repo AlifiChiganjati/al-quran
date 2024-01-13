@@ -3,6 +3,9 @@ import PageAuth from "../components/Layouts/PageAuth";
 import { useParams } from "react-router-dom";
 import { getDetailSurahQuran } from "../services/api";
 import { useState } from "react";
+import { Section } from "./pages.style";
+import { AyatCardContainer } from "../components/Elements/Card";
+import Text, { ArabText } from "../components/Elements/Text";
 
 const DetailSurahPage = () => {
   const { id } = useParams();
@@ -13,19 +16,37 @@ const DetailSurahPage = () => {
       getDetailSurahQuran({ id }).then((res) => setSurahQuran(res));
     }
   }, [id]);
-  console.log(surahQuran);
+
   return (
     <PageAuth>
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        Detail Surah - {id}
-      </div>
+      <Section>
+        <div>
+          <AyatCardContainer>
+            {Array.isArray(surahQuran.ayat) &&
+              surahQuran.ayat.map((item, i) => (
+                <div key={i}>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div>
+                      <ArabText>
+                        {item.teksArab} <span>{item.nomorAyat}</span>
+                      </ArabText>
+                    </div>
+                    <Text>{item.teksLatin}</Text>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <Text>Arti:</Text>
+                      <Text>
+                        {item.nomorAyat}. {item.teksIndonesia}
+                      </Text>
+                    </div>
+                  </div>
+                  <br />
+                  <hr />
+                  <br />
+                </div>
+              ))}
+          </AyatCardContainer>
+        </div>
+      </Section>
     </PageAuth>
   );
 };

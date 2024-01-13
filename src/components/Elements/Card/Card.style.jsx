@@ -11,3 +11,5 @@ export const CardContainer = styled(Link)`
   position: relative;
   flex-direction: column;
 `;
+
+export const AyatCardContainer = styled.div``;
