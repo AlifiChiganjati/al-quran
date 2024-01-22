@@ -7,6 +7,7 @@ import { CardContainer } from "../components/Elements/Card";
 import {
   SurahNomor,
   SurahText,
+  SurahTitleArab,
   Title,
 } from "../components/Elements/Text/Text.style";
 import { useNavigate } from "react-router-dom";
@@ -60,7 +61,7 @@ const HomePage = () => {
                 }}
               >
                 <SurahTitle as="h3">{surah.namaLatin}</SurahTitle>
-                <SurahTitle as="h3">{surah.nama}</SurahTitle>
+                <SurahTitleArab as="h3">{surah.nama}</SurahTitleArab>
               </div>
               <div
                 style={{

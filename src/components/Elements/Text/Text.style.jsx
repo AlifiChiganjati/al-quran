@@ -36,6 +36,13 @@ export const SurahTitle = styled(Text)`
   color: var(--dark-color);
 `;
 
+export const SurahTitleArab = styled(Text)`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-color);
+  font-family: var(--amiri-quran);
+`;
+
 export const SurahText = styled(Text)`
   font-size: 12px;
   color: var(--dark-color);
@@ -47,4 +54,5 @@ export const ArabText = styled(Text)`
   font-weight: 600;
   text-align: right;
   color: var(--dark-color);
+  font-family: var(--amiri-quran);
 `;

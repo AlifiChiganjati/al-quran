@@ -6,10 +6,13 @@ export const GlobalStyle = createGlobalStyle`
 --secondary-color: #9DC08B;
 --dark-color: #40513B;
 --white-color: #EDF1D6;
+--amiri-quran:'Amiri Quran', serif;
 
 font-family: 'Poppins', sans-serif;
 background-color:var(--white-color);
 }
+
+
 
 * {
 box-sizing: border-box;
